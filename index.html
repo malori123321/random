@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SYSTEM BREACHED</title>
     <style>
         body {
@@ -19,13 +20,14 @@
             border: 1px solid #0f0;
             padding: 30px;
             width: 80%;
+            max-width: 600px;
             text-align: center;
             box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
         }
-        h1 { color: #f00; text-shadow: 2px 2px #500; }
-        #counter { font-size: 3em; margin: 20px 0; }
-        #philosophy { font-style: italic; color: #fff; min-height: 50px; }
-        .cursor { display: inline-block; width: 10px; background: #0f0; animation: blink 1s infinite; }
+        h1 { color: #f00; text-shadow: 2px 2px #500; margin-top: 0; }
+        #counter { font-size: 3em; margin: 20px 0; font-weight: bold; }
+        #philosophy { font-style: italic; color: #fff; min-height: 50px; margin-bottom: 10px; }
+        .cursor { display: inline-block; width: 10px; height: 1em; background: #0f0; animation: blink 1s infinite; vertical-align: middle; }
         @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
@@ -35,7 +37,7 @@
     <h1>[!] ACCESS DENIED: SYSTEM HACKED</h1>
     <div id="counter">00:00:00</div>
     <div id="philosophy">Veri akışı başlatılıyor...</div>
-    <span class="cursor">&nbsp;</span>
+    <span class="cursor"></span>
 </div>
 
 <script>
