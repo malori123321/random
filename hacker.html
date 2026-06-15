@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>SYSTEM BREACHED</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        #container {
+            border: 1px solid #0f0;
+            padding: 30px;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+        }
+        h1 { color: #f00; text-shadow: 2px 2px #500; }
+        #counter { font-size: 3em; margin: 20px 0; }
+        #philosophy { font-style: italic; color: #fff; min-height: 50px; }
+        .cursor { display: inline-block; width: 10px; background: #0f0; animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>[!] ACCESS DENIED: SYSTEM HACKED</h1>
+    <div id="counter">00:00:00</div>
+    <div id="philosophy">Veri akışı başlatılıyor...</div>
+    <span class="cursor">&nbsp;</span>
+</div>
+
+<script>
+    const quotes = [
+        "Bilgi güçtür, ancak onu koruyamıyorsan sadece bir yüktür.",
+        "Dijital bir dünyada, kimliğin sadece kodlardan ibarettir.",
+        "Kaos, düzenin ilk adımıdır.",
+        "Sistemlerin ötesini görmek, gerçeği görmektir.",
+        "Gölgede kalanlar, ışığı yönetir."
+    ];
+
+    let seconds = 0;
+    setInterval(() => {
+        seconds++;
+        let h = Math.floor(seconds / 3600).toString().padStart(2, '0');
+        let m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+        let s = (seconds % 60).toString().padStart(2, '0');
+        document.getElementById('counter').innerText = `${h}:${m}:${s}`;
+        
+        if (seconds % 4 === 0) {
+            document.getElementById('philosophy').innerText = quotes[Math.floor(Math.random() * quotes.length)];
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
